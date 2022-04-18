@@ -11,5 +11,12 @@ public class QuantityTest {
 		Feet feet2 = new Feet(1.0);
 		Assert.assertEquals(feet1, feet2);
 	}
+	/* TC 1.1 */
 
+	@Test
+	public void given0feetand0feetShouldReturEqual() {
+		Feet feet1 = new Feet(0.0);
+		Feet feet2 = new Feet(0.0);
+		Assert.assertEquals(feet1, feet2);
+	}
 }
