@@ -62,4 +62,20 @@ public class QuantityTest {
 		Feet feet = new Feet(1.0);
 		Assert.assertNotEquals(inch, feet);
 	}
+	/* TC 1.6 Value Check for equality */
+
+	@Test
+	public void given1feetand1feet_SameValue_ShouldReturnEqual() {
+		Feet feet1 = new Feet(1.0);
+		Feet feet2 = new Feet(1.0);
+		Assert.assertEquals(feet1, feet2);
+	}
+
+	@Test
+	public void given1feetand0feet_DifferentValue_ShouldReturnNotEqual() {
+		Feet feet1 = new Feet(1.0);
+		Feet feet2 = new Feet(0.0);
+		Assert.assertNotEquals(feet1, feet2);
+	}
+
 }
