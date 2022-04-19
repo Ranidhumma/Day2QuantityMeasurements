@@ -47,4 +47,19 @@ public class QuantityTest {
 		boolean result = (feet1.equals(feet2));
 		Assert.assertFalse(result);
 	}
+
+	/* TC 1.4 Type Check */
+	@Test
+	public void given1feetand1feet_SameType_ShouldReturnEqual() {
+		Feet feet1 = new Feet(1.0);
+		Feet feet2 = new Feet(1.0);
+		Assert.assertEquals(feet1, feet2);
+	}
+
+	@Test
+	public void given1InchAnd1Feet_DifferentType_ShouldReturNotEqual() {
+		Inch inch = new Inch(1.0);
+		Feet feet = new Feet(1.0);
+		Assert.assertNotEquals(inch, feet);
+	}
 }
