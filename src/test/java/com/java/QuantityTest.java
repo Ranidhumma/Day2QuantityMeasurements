@@ -78,4 +78,20 @@ public class QuantityTest {
 		Assert.assertNotEquals(feet1, feet2);
 	}
 
+	/* Inch TC 1.7 */
+	@Test
+	public void given1Inchand1InchShouldReturEqual() {
+		Inch inch1 = new Inch(1.0);
+		Inch inch2 = new Inch(1.0);
+		Assert.assertEquals(inch1, inch2);
+	}
+
+	/* Inch TC 1.8 */
+	@Test
+	public void given0Inchand0InchShouldReturEqual() {
+		Inch inch1 = new Inch(0.0);
+		Inch inch2 = new Inch(0.0);
+		Assert.assertEquals(inch1, inch2);
+	}
+
 }
