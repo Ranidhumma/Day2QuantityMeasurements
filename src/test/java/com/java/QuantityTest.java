@@ -166,4 +166,11 @@ public class QuantityTest {
 		Assert.assertNotEquals(value1, value2);
 	}
 
+	/* TC 1.16 :1 yd = 36 in */
+	@Test
+	public void given1YardAnd36Inch_ShouldReturnEqual() {
+		double value1 = qMeasurement1.unitComparision(Unit.YARD, 1.0);
+		double value2 = qMeasurement1.unitComparision(Unit.INCH, 36.0);
+		Assert.assertEquals(value1, value2, 0.0);
+	}
 }
