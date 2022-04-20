@@ -105,4 +105,18 @@ public class QuantityTest {
 		Assert.assertNotNull(null, inch1);
 	}
 
+	/* TC 1.10 Same Reference type */
+	@Test
+	public void given1Inchand1Inch_SameRefType_ShouldReturnTrue() {
+		Inch inch1 = new Inch(1.0);
+		Assert.assertSame(inch1, inch1);
+	}
+
+	@Test
+	public void given1InchAnd1Inch_DiffRefType_ShouldReturnTrue() {
+		Inch inch1 = new Inch(1.0);
+		Inch inch2 = new Inch(0.0);
+		assertNotSame(inch1, inch2);
+	}
+
 }
