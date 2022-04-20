@@ -22,5 +22,4 @@ public class Inch {
 			return false;
 		return true;
 	}
-
 }
