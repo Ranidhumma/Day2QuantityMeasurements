@@ -1,7 +1,6 @@
 package com.java;
 
 import static org.junit.Assert.assertNotSame;
-import static org.junit.Assert.assertSame;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -28,17 +27,17 @@ public class QuantityTest {
 
 	/* TC 1.3 Same Reference type */
 	@Test
-	public void given1feetand1feet_WhenEqual_SameRefType_ShouldReturnTrue() {
-		double value1 = qMeasurement1.unitComparision(Unit.FEET, 1.0);
-		assertSame(qMeasurement1, qMeasurement1);
+	public void given_WhenSameRefType_ShouldReturnTrue() {
+		QuantityMeasurement qMeasurement1 = new QuantityMeasurement();
+		Assert.assertSame(qMeasurement1, qMeasurement1);
 	}
 
 	/* Diff Reference type */
 	@Test
-	public void given1feetand1feet_WhenEqual_DiffRefType_ShouldReturnTrue() {
-		double value1 = qMeasurement1.unitComparision(Unit.FEET, 1.0);
-		double value2 = qMeasurement1.unitComparision(Unit.FEET, 1.0);
-		assertNotSame(value1, value2);
+	public void given_DiffRefType_WhenNotSame_ShouldReturnTrue() {
+		QuantityMeasurement qMeasurement1 = new QuantityMeasurement();
+		QuantityMeasurement qMeasurement2 = new QuantityMeasurement();
+		assertNotSame(qMeasurement1, qMeasurement2);
 	}
 
 	/* TC 1.4 Type Check */
@@ -98,16 +97,16 @@ public class QuantityTest {
 
 	/* TC 1.10 Same Reference type */
 	@Test
-	public void given1InchAnd1Inch_SameRefType_ShouldReturnTrue() {
-		double value1 = qMeasurement1.unitComparision(Unit.INCH, 0.0);
+	public void givenSameRefType_Whensame_ShouldReturnTrue() {
+		QuantityMeasurement qMeasurement1 = new QuantityMeasurement();
 		Assert.assertSame(qMeasurement1, qMeasurement1);
 	}
 
 	@Test
-	public void given1InchAnd0Inch_DiffRefType_ShouldReturnTrue() {
-		double value1 = qMeasurement1.unitComparision(Unit.INCH, 1.0);
-		double value2 = qMeasurement1.unitComparision(Unit.INCH, 0.0);
-		assertNotSame(value1, value2);
+	public void givenDiffRefType_whenNotSame_ShouldReturnTrue() {
+		QuantityMeasurement qMeasurement1 = new QuantityMeasurement();
+		QuantityMeasurement qMeasurement2 = new QuantityMeasurement();
+		assertNotSame(qMeasurement1, qMeasurement2);
 	}
 
 	/* TC 1.11 Type Check */
@@ -142,6 +141,8 @@ public class QuantityTest {
 
 	}
 
+	// Uc3//
+
 	/* TC 1.13 : 3Feet = 1yard */
 	@Test
 	public void given3feetand1YardShouldReturnTrue() {
@@ -150,4 +151,43 @@ public class QuantityTest {
 		Assert.assertEquals(value1, value2, 0.0);
 	}
 
+	/* TC 1.14 : 1 ft != 1 yd */
+	@Test
+	public void given1feetand1YardShouldReturnNotEqual() {
+		double value1 = qMeasurement1.unitComparision(Unit.FEET, 1.0);
+		double value2 = qMeasurement1.unitComparision(Unit.YARD, 1.0);
+		Assert.assertNotEquals(value1, value2);
+	}
+
+	/* TC 1.15 : 1 in != 1 yd */
+	@Test
+	public void given1Inchand1YardShouldReturnNotEqual() {
+		double value1 = qMeasurement1.unitComparision(Unit.INCH, 1.0);
+		double value2 = qMeasurement1.unitComparision(Unit.YARD, 1.0);
+		Assert.assertNotEquals(value1, value2);
+	}
+
+	/* TC 1.16 :1 yd = 36 in */
+	@Test
+	public void given1YardAnd36Inch_ShouldReturnEqual() {
+		double value1 = qMeasurement1.unitComparision(Unit.YARD, 1.0);
+		double value2 = qMeasurement1.unitComparision(Unit.INCH, 36.0);
+		Assert.assertEquals(value1, value2, 0.0);
+	}
+
+	/* TC 1.17 : 36 in = 1 yd */
+	@Test
+	public void given36InchAnd1YardShouldReturnEqual() {
+		double value1 = qMeasurement1.unitComparision(Unit.INCH, 36.0);
+		double value2 = qMeasurement1.unitComparision(Unit.YARD, 1.0);
+		Assert.assertEquals(value1, value2, 0.0);
+	}
+
+	/* TC 1.18: 1 yd = 3 ft */
+	@Test
+	public void given1Yardand3FeetShouldReturnEqual() {
+		double value1 = qMeasurement1.unitComparision(Unit.YARD, 1.0);
+		double value2 = qMeasurement1.unitComparision(Unit.FEET, 3.0);
+		Assert.assertEquals(value1, value2, 0.0);
+	}
 }
