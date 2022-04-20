@@ -113,10 +113,25 @@ public class QuantityTest {
 	}
 
 	@Test
-	public void given1InchAnd1Inch_DiffRefType_ShouldReturnTrue() {
+	public void given1InchAnd0Inch_DiffRefType_ShouldReturnTrue() {
 		Inch inch1 = new Inch(1.0);
 		Inch inch2 = new Inch(0.0);
 		assertNotSame(inch1, inch2);
+	}
+
+	/* TC 1.11 Type Check */
+	@Test
+	public void given1Inchand1Inch_SameType_ShouldReturnEqual() {
+		Inch inch1 = new Inch(1.0);
+		Inch inch2 = new Inch(1.0);
+		Assert.assertEquals(inch1, inch2);
+	}
+
+	@Test
+	public void given1FeetAnd1Inch_DifferentType_ShouldReturNotEqual() {
+		Feet feet = new Feet(1.0);
+		Inch inch = new Inch(1.0);
+		Assert.assertNotEquals(feet, inch);
 	}
 
 }
