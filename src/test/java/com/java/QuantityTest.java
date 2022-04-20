@@ -134,4 +134,21 @@ public class QuantityTest {
 		Assert.assertNotEquals(feet, inch);
 	}
 
+	/* TC 1.12 Value Check for equality */
+
+	@Test
+	public void given1InchAnd1Inch_SameValue_ShouldReturnEqual() {
+		Inch inch1 = new Inch(1.0);
+		Inch inch2 = new Inch(1.0);
+		Assert.assertEquals(inch1, inch2);
+	}
+
+	@Test
+	public void given0InchAnd1Inch_DiffValue_ShouldReturnNotEqual() {
+		Inch inch1 = new Inch(0.0);
+		Inch inch2 = new Inch(1.0);
+		Assert.assertNotEquals(inch1, inch2);
+
+	}
+
 }
