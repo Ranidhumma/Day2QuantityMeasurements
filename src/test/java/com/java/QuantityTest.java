@@ -10,11 +10,6 @@ public class QuantityTest {
 	private static final double NULL = 0;
 	QuantityMeasurement qMeasurement1 = new QuantityMeasurement();
 
-	/*
-	 * @Test public void given1feetand1feetShouldReturEqual() { Feet feet1 = new
-	 * Feet(1.0); Feet feet2 = new Feet(1.0); Assert.assertEquals(feet1, feet2);
-	 */
-
 	/* TC 1.1 */
 	@Test
 	public void given0Feetand0Feet_ShouldReturnEqual() {
@@ -40,7 +35,7 @@ public class QuantityTest {
 
 	/* Diff Reference type */
 	@Test
-	public void given1feetand0feet_WhenEqual_DiffRefType_ShouldReturnTrue() {
+	public void given1feetand1feet_WhenEqual_DiffRefType_ShouldReturnTrue() {
 		double value1 = qMeasurement1.unitComparision(Unit.FEET, 1.0);
 		double value2 = qMeasurement1.unitComparision(Unit.FEET, 1.0);
 		assertNotSame(value1, value2);
@@ -145,6 +140,14 @@ public class QuantityTest {
 		double value2 = qMeasurement1.unitComparision(Unit.INCH, 1.0);
 		Assert.assertNotEquals(value1, value2);
 
+	}
+
+	/* TC 1.13 : 3Feet = 1yard */
+	@Test
+	public void given3feetand1YardShouldReturnTrue() {
+		double value1 = qMeasurement1.unitComparision(Unit.FEET, 3.0);
+		double value2 = qMeasurement1.unitComparision(Unit.YARD, 1.0);
+		Assert.assertEquals(value1, value2, 0.0);
 	}
 
 }

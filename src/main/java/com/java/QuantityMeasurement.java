@@ -4,8 +4,8 @@ public class QuantityMeasurement {
 	double feet;
 	double inch;
 
-	public double unitComparision(Unit unit, double value) {
-		return unit.unit * value;
+	public double unitComparision(Unit name, double value) {
+		return name.unit * value;
 
 	}
 
