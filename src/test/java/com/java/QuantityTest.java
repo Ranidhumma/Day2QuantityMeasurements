@@ -138,7 +138,6 @@ public class QuantityTest {
 		double value1 = qMeasurement1.unitComparision(Unit.INCH, 0.0);
 		double value2 = qMeasurement1.unitComparision(Unit.INCH, 1.0);
 		Assert.assertNotEquals(value1, value2);
-
 	}
 
 	// Uc3//
@@ -167,27 +166,4 @@ public class QuantityTest {
 		Assert.assertNotEquals(value1, value2);
 	}
 
-	/* TC 1.16 :1 yd = 36 in */
-	@Test
-	public void given1YardAnd36Inch_ShouldReturnEqual() {
-		double value1 = qMeasurement1.unitComparision(Unit.YARD, 1.0);
-		double value2 = qMeasurement1.unitComparision(Unit.INCH, 36.0);
-		Assert.assertEquals(value1, value2, 0.0);
-	}
-
-	/* TC 1.17 : 36 in = 1 yd */
-	@Test
-	public void given36InchAnd1YardShouldReturnEqual() {
-		double value1 = qMeasurement1.unitComparision(Unit.INCH, 36.0);
-		double value2 = qMeasurement1.unitComparision(Unit.YARD, 1.0);
-		Assert.assertEquals(value1, value2, 0.0);
-	}
-
-	/* TC 1.18: 1 yd = 3 ft */
-	@Test
-	public void given1Yardand3FeetShouldReturnEqual() {
-		double value1 = qMeasurement1.unitComparision(Unit.YARD, 1.0);
-		double value2 = qMeasurement1.unitComparision(Unit.FEET, 3.0);
-		Assert.assertEquals(value1, value2, 0.0);
-	}
 }
