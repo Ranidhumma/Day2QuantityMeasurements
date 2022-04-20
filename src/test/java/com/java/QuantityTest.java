@@ -182,4 +182,12 @@ public class QuantityTest {
 		Assert.assertEquals(value1, value2, 0.0);
 	}
 
+	/* TC 1.18: 1 yd = 3 ft */
+	@Test
+	public void given1Yardand3FeetShouldReturnEqual() {
+		double value1 = qMeasurement1.unitComparision(Unit.YARD, 1.0);
+		double value2 = qMeasurement1.unitComparision(Unit.FEET, 3.0);
+		Assert.assertEquals(value1, value2, 0.0);
+	}
+
 }
