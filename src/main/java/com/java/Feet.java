@@ -9,6 +9,10 @@ public class Feet {
 		this.value = value;
 	}
 
+	public Feet() {
+		// TODO Auto-generated constructor stub
+	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
