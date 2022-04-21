@@ -203,7 +203,15 @@ public class QuantityTest {
 	public void given2Feetand1CmShouldReturnNotEqual() {
 		double value1 = qMeasurement1.unitCompare(Unit.CM, 1.0);
 		double value2 = qMeasurement1.unitCompare(Unit.FEET, 1.0);
-		Assert.assertNotEquals(value1, value2, 0.0);
+		Assert.assertNotEquals(value1, value2);
+	}
+	/* TC 1.21 : 1 cm!=1 inch */
+
+	@Test
+	public void given1Inchand1CmShouldReturnNotEqual() {
+		double value1 = qMeasurement1.unitCompare(Unit.CM, 1.0);
+		double value2 = qMeasurement1.unitCompare(Unit.INCH, 1.0);
+		Assert.assertNotEquals(value1, value2);
 	}
 
 }
