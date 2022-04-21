@@ -213,5 +213,13 @@ public class QuantityTest {
 		double value2 = qMeasurement1.unitCompare(Unit.INCH, 1.0);
 		Assert.assertNotEquals(value1, value2);
 	}
+	/* TC 1.22: 90cm = 1 yard */
+
+	@Test
+	public void given1YardAnd90CmShouldReturnEqual() {
+		double value1 = qMeasurement1.unitCompare(Unit.CM, 90.00);
+		double value2 = qMeasurement1.unitCompare(Unit.YARD, 1.0);
+		Assert.assertEquals(value1, value2, 0.0);
+	}
 
 }
