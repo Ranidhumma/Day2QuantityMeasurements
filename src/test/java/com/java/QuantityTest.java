@@ -95,7 +95,7 @@ public class QuantityTest {
 		Assert.assertNotNull(value1);
 	}
 
-	/* TC 1.10 Same Reference type */
+	/* TC 1.10 Same Referencetype */
 	@Test
 	public void givenSameRefType_Whensame_ShouldReturnTrue() {
 		QuantityMeasurement qMeasurement1 = new QuantityMeasurement();
@@ -189,4 +189,13 @@ public class QuantityTest {
 		double value2 = qMeasurement1.unitCompare(Unit.FEET, 3.0);
 		Assert.assertEquals(value1, value2, 0.0);
 	}
+	/* UC3: TC 1.19: 2 inch=5 cm , 1inch=2.5 cm, 1cm =1/2.5 inches */
+
+	@Test
+	public void given2Inchand5CmShouldReturnEqual() {
+		double value1 = qMeasurement1.unitCompare(Unit.INCH, 2.0);
+		double value2 = qMeasurement1.unitCompare(Unit.CM, 5.0);
+		Assert.assertEquals(value1, value2, 0.0);
+	}
+
 }
