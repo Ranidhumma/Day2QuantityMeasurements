@@ -5,7 +5,8 @@ public class QuantityMeasurement {
 	double inch;
 	double yard;
 
-	public double unitComparision(Unit unitType, double value) {
+	public double unitCompare(Unit unitType, double value) {
+		// TODO Auto-generated method stub
 		return unitType.unit * value;
 
 	}
