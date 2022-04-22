@@ -1,7 +1,7 @@
 package com.java;
 
 public enum LengthUnits implements Units {
-	INCH(1), FEET(12), YARD(36), CM(1 / 2.5);
+	INCH(1), FEET(12), YARD(36), CM(1 / 2.5); // base is Inch
 
 	double unit;
 

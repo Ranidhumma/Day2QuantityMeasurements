@@ -229,7 +229,8 @@ public class QuantityLengthsTest {
 		double value2 = qMeasurement1.unitConvert(LengthUnits.FEET, 1.0);
 		Assert.assertEquals(value1, value2, 0.0);
 	}
-//Uc4-Addition
+	/* Uc4-Addition */
+
 	/* 2 in + 2 in = 4 in */
 
 	@Test
