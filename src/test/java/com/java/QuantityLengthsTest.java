@@ -258,7 +258,7 @@ public class QuantityLengthsTest {
 
 	/* 2 in + 2.5 cm = 3 in */
 	@Test
-	public void given2InchAnd25CmShouldReturn3Inch() {
+	public void givenTwoInchAndTwoPointFiveCmvalue_Add_ShouldReturnInch() {
 		double value1 = qMeasurement1.unitAdd(LengthUnits.INCH, 2.00, LengthUnits.CM, 2.5);
 		double value2 = qMeasurement1.unitConvert(LengthUnits.INCH, 3.0);
 		Assert.assertEquals(value2, value1, 0.0);
