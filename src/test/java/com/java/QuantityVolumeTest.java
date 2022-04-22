@@ -35,4 +35,12 @@ public class QuantityVolumeTest {
 		Assert.assertEquals(value2, value1, 0.0);
 	}
 
+	/* 1 litre + 1000 ml = 2 litres */
+	@Test
+	public void given1LitreAnd1000MlShouldReturn2Litre() {
+		double value1 = qMeasurement.unitAdd(VolumeUnits.LITRE, 1.00, VolumeUnits.MILLILITER, 1000);
+		double value2 = qMeasurement.unitConvert(VolumeUnits.LITRE, 2.0);
+		Assert.assertEquals(value2, value1, 0.0);
+	}
+
 }
