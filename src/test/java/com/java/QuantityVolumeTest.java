@@ -26,7 +26,7 @@ public class QuantityVolumeTest {
 
 //Addition-UC6
 
-	/* TC1.3: 1 gallon + 3.78 litres = 7.56 litres */
+	/* TC 2.3: 1 gallon + 3.78 litres = 7.56 litres */
 
 	@Test
 	public void givenOneGallonAndThreePoingSeventyEightLitre_ShouldReturn_SevenPointFiftySevenLitre() {
@@ -35,7 +35,7 @@ public class QuantityVolumeTest {
 		Assert.assertEquals(value2, value1, 0.0);
 	}
 
-	/* 1 litre + 1000 ml = 2 litres */
+	/* TC2.4 : 1 litre + 1000 ml = 2 litres */
 	@Test
 	public void given1LitreAnd1000MlShouldReturn2Litre() {
 		double value1 = qMeasurement.unitAdd(VolumeUnits.LITRE, 1.00, VolumeUnits.MILLILITER, 1000);
